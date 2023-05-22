@@ -8,12 +8,12 @@ import (
 	"strconv"
 )
 
-type calc struct {
+type Calc struct {
 	e1 int
 	e2 int
 }
 
-func (self calc) operate(operador string) int {
+func (self Calc) Operate(operador string) int {
 	operador1 := self.e1
 	operador2 := self.e2
 
