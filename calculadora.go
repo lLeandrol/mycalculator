@@ -52,7 +52,7 @@ func LeerEntrada() string {
 	return scanner.Text()
 }
 
-func getOperands(entrada string) (calc, string) {
+func getOperands(entrada string) (Calc, string) {
 	regex := regexp.MustCompile(`^(\d+)([\+\-\*\/])(\d+)$`)
 
 	//entrada := leerEntrada()
@@ -62,12 +62,12 @@ func getOperands(entrada string) (calc, string) {
 		operador := regex.ReplaceAllString(entrada, "$2")
 		entrada2 := parsear(regex.ReplaceAllString(entrada, "$3"))
 
-		c := calc{e1: entrada1, e2: entrada2}
+		c := Calc{e1: entrada1, e2: entrada2}
 		//toPrint := c.operate(operador)
 		return c, operador
 		//fmt.Println(toPrint)
 	} else {
-		return calc{}, ""
+		return Calc{}, ""
 	}
 
 }
